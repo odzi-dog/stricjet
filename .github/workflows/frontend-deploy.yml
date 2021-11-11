@@ -1,4 +1,4 @@
-name: stricjet.ml production
+name: stricjet.ml
 
 on: push
 
