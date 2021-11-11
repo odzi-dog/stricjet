@@ -26,4 +26,4 @@ jobs:
     - name: Push application to private cloud instance
       run: |
         cd backend
-        caprover deploy -h https://captain.app.odzi.dog -p ${{ secrets.CAPROVER_PASSWORD }} -a pawcapsu-api
+        caprover deploy -h https://captain.app.odzi.dog -p ${{ secrets.CAPROVER_PASSWORD }} -a stricjet-backend
