@@ -3,7 +3,7 @@ name: api.stricjet.ml
 on: push
 
 jobs:
-  api_pawcapsu:
+  deploy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
