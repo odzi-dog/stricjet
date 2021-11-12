@@ -24,7 +24,13 @@
 		"checkJs": true,
 		"paths": {
 			"$lib": ["src/lib"],
-			"$lib/*": ["src/lib/*"]
+			"$lib/*": ["src/lib/*"],
+			"@app/shared": [
+        "../backend/libs/shared/src"
+      ],
+      "@app/shared/*": [
+        "../backend/libs/shared/src/*"
+      ]
 		}
 	},
 	"include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
