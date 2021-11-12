@@ -8,23 +8,33 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [
 		preprocess({
-			postcss: true
-		})
+			"postcss": true
+		}),
 	],
 
 	kit: {
-		// hydrate the <div id="svelte"> element in src/app.html
 		adapter: adapter(),
+		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-    vite: {
-      resolve: {
-        alias: {
+		vite: {
+			optimizeDeps: {
+				exclude: ['svelte-kit-cookie-session'],
+			},
+			resolve: {
+				alias: {
           src: resolve('./src'),
-          '@app/shared': resolve('../backend/libs/shared/src'),
-        },
-      },
-    },
+					$stores: resolve('./src/stores'),
+					$services: resolve('/src/services'),
+					$config: resolve('/src/config'),
+					'@app/shared': resolve('../../backend/api/libs/shared/src'),
+				},
+			},
+		},
 	}
 };
 
 export default config;
+// Workaround until SvelteKit uses Vite 2.3.8 (and it's confirmed to fix the Tailwind JIT problem)
+const mode = process.env.NODE_ENV;
+const dev = mode === "development";
+process.env.TAILWIND_MODE = dev ? "watch" : "build";
