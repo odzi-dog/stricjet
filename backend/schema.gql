@@ -1,0 +1,17 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Profile {
+  _id: String!
+  email: String!
+  username: String
+}
+
+type Query {
+  me: Profile!
+}
+
+type Mutation {
+  login(token: String!): Profile!
+}
