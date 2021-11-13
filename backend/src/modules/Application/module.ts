@@ -20,7 +20,7 @@ import * as GlobalModules from 'src/bootstrap/GlobalModules.array';
       cors: {
         origin:
           process.env.NODE_ENV === 'production'
-            ? 'https://www.stricjet.ml'
+            ? 'https://www.stricjet.tech'
             : 'http://localhost:3000',
         credentials: true,
       },
