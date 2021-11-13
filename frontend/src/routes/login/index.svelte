@@ -13,7 +13,8 @@
     
     if (!token) {
       // Sending user to authorize page
-      console.log('Send to auth');
+      const resourceId = "617a552bb4a7bfad0b9a1b4a";
+      goto(`https://cloud.odzi.dog/auth/v1/${resourceId}`);
     } else {
       // Trying to authorize user using
       // given token.
